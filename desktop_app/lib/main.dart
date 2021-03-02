@@ -1,7 +1,6 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:desktop_app/models/global.dart';
 import 'package:flutter/material.dart';
-//import 'models/global.dart';
 import '/UI/Window_customize.dart';
 
 void main() {
