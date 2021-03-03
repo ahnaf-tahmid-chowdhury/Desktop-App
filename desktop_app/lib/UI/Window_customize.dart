@@ -6,14 +6,30 @@ class LeftSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 200,
+      width: 250,
       child: Container(
         color: leftsidebarC,
         child: Column(
           children: [
             WindowTitleBarBox(
-              child: MoveWindow(),
-            )
+              child: Row(
+                children: [
+                  Expanded(
+                    child: MoveWindow(
+                      child: Center(
+                        child: Text(
+                          "SuperGeiger",
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontFamily: 'Avenir',
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -25,17 +41,37 @@ class RightSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-        child: Container(
+      child: Stack(
+        alignment: Alignment.bottomRight,
+        children: <Widget>[
+          Container(
             decoration: rightsidebarC,
 
             //facing error in linux
-            child: Column(children: [
-              WindowTitleBarBox(
-                  child: Row(children: [
-                Expanded(child: MoveWindow()),
-                WindowButtons()
-              ]))
-            ])));
+            child: Column(
+              children: [
+                WindowTitleBarBox(
+                  child: Row(
+                    children: [
+                      Expanded(child: MoveWindow()),
+                      WindowButtons(),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            bottom: -200,
+            right: -200,
+            child: CircleAvatar(
+              radius: 200,
+              backgroundColor: leftsidebarC,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 

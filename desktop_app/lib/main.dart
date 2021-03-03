@@ -10,6 +10,7 @@ void main() {
     appWindow.minSize = initialSize;
     appWindow.size = initialSize;
     appWindow.alignment = Alignment.center;
+    appWindow.title = "SuperGeiger";
     appWindow.show();
   });
 }
