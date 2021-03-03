@@ -20,12 +20,33 @@ class LeftSide extends StatelessWidget {
                         child: Text(
                           "SuperGeiger",
                           style: TextStyle(
-                              fontSize: 15,
-                              fontFamily: 'Avenir',
+                              fontSize: 25,
+                              color: Colors.amber[100],
+                              fontFamily: 'Teko',
                               fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 20,
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20, right: 20, left: 0),
+              padding: EdgeInsets.all(10),
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.amberAccent,
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(30),
+                    topRight: Radius.circular(50)),
+                boxShadow: [
+                  new BoxShadow(
+                    color: Colors.black.withOpacity(.05),
+                    blurRadius: 10.0,
                   ),
                 ],
               ),
